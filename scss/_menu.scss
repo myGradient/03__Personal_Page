@@ -1,0 +1,150 @@
+
+
+/*  Read to Undertstand ME!!!
+==> Menu Button: It always shoulde be same position that we want to see it so I set it absolute and z-index:3 it means closer  position to viewer top layer of html
+
+==> Mixins allow document authors to define patterns of property value pairs, which can then be reused in other rulesets.
+==> For example here I used mixin: "@include easeOut;"  it's like preparing function in different file and call it for usage. In this example all the mixin property defined in the file: "_config.scss" When I need it I can call them it will be enough.
+Include allows the property value pairs in an @mixin to be copied into the current declaration block.
+
+==>'@' calling prepared function to use.
+==>'&' concatenates the parent class
+*/
+
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: set-text-color($primary-color);
+    @include easeOut;
+  }
+
+ /*  
+  Rotate Into X With Menu Lines, bassically  configurating 'close' class. This class is not permanent, I'm creating it with JS(main.js) when menu clicked and visiable in console in clicked. state. */
+  &.close {
+    transform: rotate(180deg);
+
+    .btn-line {
+      // Line 1 - Rotate
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      // Line 2 - Hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      // Line 3 - Rotate
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
+
+  // Menu Overlay : Just grap the menu and write properties. 
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden; // by default menu is not visible What I mean here it's exist but not visible. Just when we clicked it'll be visible and ready to use. 
+
+  &.show {
+    visibility: visible; // when show class activated the menu will be active. 
+  }
+    /* Used of "&=menu" like ".this" in object. I'm styling branding class which is inside the menu that situated in html*/
+  &-branding,
+  &-nav {
+    display: flex; // by default I think element move horizontally but by defining flex-flow: column the element inside will oder vertically. every element centered.
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%; // I have two classes(div: 'menu-branding' = '&-branding' and  'menu-nav'='&-nav'). Two columns each side of column take half 
+    height: 100vh; // viewport 100 means use all visible area by. it divide to 100 slices all visible area.
+    overflow: hidden;
+  }
+
+    /* I'm styling right side of my menu which is &-nav(or menu-nav)*/
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 5);
+    list-style: none;
+    transform: translate3d(0, -100%, 0); //Transation property to show menu nav with effect. It can up or down side by changing it negative(-) to pozitif sigh(+)
+    @include easeOut;
+
+    &.show {
+      // Slide in from top
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  // Left side of menu: Branding Side
+  &-branding {
+    background: $primary-color; //Other side will be more darker.
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+
+    &.show {
+      // Slide in from bottom
+      transform: translate3d(0, 0, 0);
+    }
+
+     /* Here the portrait: by choosing border radius %50 it will be circle. And I put frame color also by defining boder properties.  */
+    .portrait {
+      width: 250px;
+      height: 250px;
+      background: url('../img/Portrait_Mid.jpg');
+      border-radius: 50%;
+      border: solid 3px $secondary-color;
+    }
+  }
+   /* For navigation item will off the screen until show state */
+  .nav-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    &.show {
+      // Slide in from right
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+   /* Just little bit styling for nav link/items */
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: set-text-color($primary-color);
+    text-decoration: none;
+    @include easeOut;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+   // I'll set a delay for each nav item slide by 0.1s. For this delay I used sass for loop. Here 'x' like 'i' in JavaScript(in for loop) it 4 used because I have 4 items like length(in JS). This "#{$x}" is like template for sass usage it's a variable to apply transation delay for each.  
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}
