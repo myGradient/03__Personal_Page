@@ -36,7 +36,7 @@
   }
 
   .menu-nav {
-    height: 75vh;
+    height: 75vh;// Menu nav will take 75% of view height it remain 25% for branding(myImage)
     transform: translate3d(-100%, 0, 0);
     font-size: 24px;
   }
@@ -46,9 +46,10 @@
     transform: translate3d(100%, 0, 0);
 
     .portrait {
-      background: url('../img/portrait_small.jpg');
+      background: url('../img/Portrait_S.jpg');
       width: 150px;
       height: 150px;
+      
     }
   }
 

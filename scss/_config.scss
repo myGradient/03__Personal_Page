@@ -6,7 +6,7 @@
 $primary-color: #444;
 $secondary-color: #eece1a;
 $show-home-image: true;
-$home-image: url(../img/background.jpg);
+$home-image: url(../img/Background03.jpg);
 $background-opacity: 0.9;
 
 @mixin easeOut {
@@ -43,8 +43,9 @@ $background-opacity: 0.9;
   }
 }
 
-// Media Query Mixins
+// Media Query Mixins: by using "@content" I'll be able to call this function from any other file. For instance; "@iclude mediaMd" the use defined property.
 @mixin mediaSm {
+  //Here everything will apply when width 500px or less
   @media screen and (max-width: 500px) {
     @content;
   }
