@@ -27,7 +27,7 @@ Include allows the property value pairs in an @mixin to be copied into the curre
     @include easeOut;
   }
 
- /*  
+   /*  
   Rotate Into X With Menu Lines, bassically  configurating 'close' class. This class is not permanent, I'm creating it with JS(main.js) when menu clicked and visiable in console in clicked. state. */
   &.close {
     transform: rotate(180deg);
@@ -90,7 +90,7 @@ Include allows the property value pairs in an @mixin to be copied into the curre
     }
   }
 
-  // Left side of menu: Branding Side
+    // Left side of menu: Branding Side
   &-branding {
     background: $primary-color; //Other side will be more darker.
     transform: translate3d(0, 100%, 0);
@@ -110,7 +110,7 @@ Include allows the property value pairs in an @mixin to be copied into the curre
       border: solid 3px $secondary-color;
     }
   }
-   /* For navigation item will off the screen until show state */
+    /* For navigation item will off the screen until show state */
   .nav-item {
     transform: translate3d(600px, 0, 0);
     @include easeOut;
