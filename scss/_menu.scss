@@ -23,7 +23,7 @@ Include allows the property value pairs in an @mixin to be copied into the curre
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: set-text-color($primary-color);
+    background: set-text-color($primary-color); // Color of Hambuger menu lines defined by function that I create in _config.sccs file.
     @include easeOut;
   }
 

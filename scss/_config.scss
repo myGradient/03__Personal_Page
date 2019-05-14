@@ -34,7 +34,7 @@ $background-opacity: 0.9;
   }
 }
 
-// Set Text Color
+// Make text color readiable by setting a function that checking and comparing  lightness of color. And Set Text Color automatically. If lightnes value bigger then 40 text color will be Black. Otherwise it will remain white.
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
     @return #000;

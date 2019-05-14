@@ -15,7 +15,7 @@
 body {
   @include background;
   background: $primary-color;
-  color: set-text-color($primary-color);
+  color: set-text-color($primary-color); //here in stead of asigning text color manually I just call the function that I created in _config.scss file which is setting up the text color automatically by checking the background color. 
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -61,7 +61,7 @@ header {
 main {
   padding: 4rem;
   // height: 100%;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);// here 60px for footer which means my content will show up until footer area.I define my content area by substracting/deducting footer area. This just to create sticky footer. Now I can add or remove content footer will stick same position. "calc" is good.
 
   .icons {
     margin-top: 1rem;
@@ -83,24 +83,24 @@ main {
     }
   }
 }
-
+/* Everthing that in this class naturally will be grid item for me. "grid-template-areas:" is visual representative of grid for example first row:" 'bioimage bio bio'" and second row: "'job1 job2 job3';"  */
 .about-info {
   display: grid;
   grid-gap: 30px;
   grid-template-areas:
     'bioimage bio bio'
     'job1 job2 job3';
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); // I can write like this also "1fr 1fr 1fr"
 
   .bio-image {
-    grid-area: bioimage;
+    grid-area: bioimage;  // related with ".about-info"
     margin: auto;
     border-radius: 50%;
     border: $secondary-color 3px solid;
   }
 
   .bio {
-    grid-area: bio;
+    grid-area: bio;     // related with ".about-info"
     font-size: 1.5rem;
   }
 
@@ -130,7 +130,7 @@ main {
   grid-template-columns: repeat(3, 1fr);
 
   img {
-    width: 100%;
+    width: 100%; // images shrink 100% of its container or parent element.
     border: 3px #fff solid;
 
     &:hover {
@@ -199,4 +199,4 @@ main {
   height: 60px;
 }
 
-@import 'mobile';
+@import 'mobile'; //It's in the bottom because I want to run it after initial css content.
