@@ -1,11 +1,11 @@
-// Widescreens
+// Widescreens: Extra large there will be 4 columns per row provided by grid-template-columns.
 @include mediaXl {
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-// Desktops & Laptops
+// Desktops & Laptops:there will be 3 columns per row provided by grid-template-columns
 @include mediaLg {
   .projects {
     grid-template-columns: repeat(3, 1fr);
@@ -82,7 +82,7 @@
       font-size: 5rem;
     }
   }
-
+    // Here for very small screen 1 fractional don't need to use repeat. 
   .projects {
     grid-template-columns: 1fr;
   }
