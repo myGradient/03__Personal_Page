@@ -8,5 +8,7 @@ I'm try to create a project like code book by commenting everthing everywhere wi
 I'm new in usage of Sass and SCSS. 
 
 
-## Json Usage
+## Tasks:
+1. Work on Content Change Lorem Ipsum
+2. 
 
