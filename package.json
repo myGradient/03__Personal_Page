@@ -11,7 +11,7 @@
   "author": "Ali Mengütay",
   "license": "MIT",
   "dependencies": {
-    "gh-pages": "^2.0.1",
+    "gh-pages": "^1.2.1",
     "node-sass": "^4.12.0"
   }
 }
