@@ -4,10 +4,10 @@
 
 
 $primary-color: #444;  // option: #444;
-$secondary-color:  #eece1a; //as option  #eece1a;
+$secondary-color: #cea425; //as option  #eece1a; MyChoice:#1956ee
 $show-home-image: true;
-$home-image: url(../img/Background03.jpg);
-$background-opacity: 0.9;
+$home-image: url(../img/Background02.jpg);
+$background-opacity: 0.9; // Please put here 0.9
 
 @mixin easeOut {
   transition: all 0.5s ease-out;

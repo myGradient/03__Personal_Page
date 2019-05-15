@@ -1,24 +1,14 @@
-/* SASS or SCSS is somekind of core styling. Sass is a CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS. The aim is to make the coding process simpler and more efficient.  */
-/* I save all the variables and  mixins here to be well organized and more clear. To be able to use all variables I'll import this file from "main.scss". It's like liking files */
-/*  Read to Undertstand ME!!!
-==> Menu Button: It always shoulde be same position that we want to see it so I set it absolute and z-index:3 it means closer  position to viewer top layer of html
+/* The menu or Hamburger menu properties  */
 
-==> Mixins allow document authors to define patterns of property value pairs, which can then be reused in other rulesets.
-==> For example here I used mixin: "@include easeOut;"  it's like preparing function in different file and call it for usage. In this example all the mixin property defined in the file: "_config.scss" When I need it I can call them it will be enough.
-Include allows the property value pairs in an @mixin to be copied into the current declaration block.
 
-==>'@' calling prepared function to use.
-==>'&' concatenates the parent class
-*/
+
 .menu-btn {
   position: absolute;
   z-index: 3;
   right: 35px;
   top: 35px;
   cursor: pointer;
-  transition: all 0.5s ease-out;
-  /*  
-  Rotate Into X With Menu Lines, bassically  configurating 'close' class. This class is not permanent, I'm creating it with JS(main.js) when menu clicked and visiable in console in clicked. state. */ }
+  transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
@@ -39,11 +29,7 @@ Include allows the property value pairs in an @mixin to be copied into the curre
   top: 0;
   width: 100%;
   opacity: 0.9;
-  visibility: hidden;
-  /* Used of "&=menu" like ".this" in object. I'm styling branding class which is inside the menu that situated in html*/
-  /* I'm styling right side of my menu which is &-nav(or menu-nav)*/
-  /* For navigation item will off the screen until show state */
-  /* Just little bit styling for nav link/items */ }
+  visibility: hidden; }
   .menu.show {
     visibility: visible; }
   .menu-branding, .menu-nav {
@@ -67,8 +53,7 @@ Include allows the property value pairs in an @mixin to be copied into the curre
   .menu-branding {
     background: #444;
     transform: translate3d(0, 100%, 0);
-    transition: all 0.5s ease-out;
-    /* Here the portrait: by choosing border radius %50 it will be circle. And I put frame color also by defining boder properties.  */ }
+    transition: all 0.5s ease-out; }
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
@@ -76,14 +61,14 @@ Include allows the property value pairs in an @mixin to be copied into the curre
       height: 250px;
       background: url("../img/Portrait_Mid.jpg");
       border-radius: 50%;
-      border: solid 3px #cea425; }
+      border: solid 3px #eece1a; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
-      color: #cea425; }
+      color: #eece1a; }
   .menu .nav-link {
     display: inline-block;
     position: relative;
@@ -95,7 +80,7 @@ Include allows the property value pairs in an @mixin to be copied into the curre
     text-decoration: none;
     transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
-      color: #cea425; }
+      color: #eece1a; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -109,7 +94,6 @@ Include allows the property value pairs in an @mixin to be copied into the curre
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
-/* Here by using astriks in CSS I'm selecting every thing, defining "box-sizing:border-box"==> on an element padding and border are included in the width and height: */
 * {
   box-sizing: border-box; }
 
@@ -134,7 +118,6 @@ body {
       z-index: -1;
       background: rgba(68, 68, 68, 0.9); }
 
-/* Headings: I used sass here here. For example by using "&" means every property that defined for h1, h2, h3 will apply for that element coming after &(the class name) sign. 1rem here is default font size of html, "em" is inherit to parent element. */
 h1,
 h2,
 h3 {
@@ -155,43 +138,39 @@ a {
   color: #fff;
   text-decoration: none; }
 
-/* I always want to the header to be in the top so I choosed position fixed, z-Index: bigger number means element closer to us. seconadry color is yellow  */
 header {
   position: fixed;
   z-index: 2;
   width: 100%; }
 
-/*in sass dolar $ sign we are using for variable */
 .text-secondary {
-  color: #cea425; }
+  color: #eece1a; }
 
-/* I nested some other element to the main section like icons, a etc.. Every nested element will apply parents property plus its own property. "vh": it stands for view port hight*/
 main {
   padding: 4rem;
   min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
-      padding: 0.4rem;
-      transition: all 0.5s ease-out; }
+      padding: 0.4rem; }
       main .icons a:hover {
-        color: #cea425; }
+        color: #eece1a;
+        transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
 
-/* Everthing that in this class naturally will be grid item for me. "grid-template-areas:" is visual representative of grid for example first row:" 'bioimage bio bio'" and second row: "'job1 job2 job3';"  */
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
-    border: #cea425 3px solid; }
+    border: #eece1a 3px solid; }
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
@@ -204,7 +183,7 @@ main {
   .about-info .job {
     background: #515151;
     padding: 0.5rem;
-    border-bottom: #cea425 5px solid; }
+    border-bottom: #eece1a 5px solid; }
 
 .projects {
   display: grid;
@@ -215,7 +194,7 @@ main {
     border: 3px #fff solid; }
     .projects img:hover {
       opacity: 0.5;
-      border-color: #cea425;
+      border-color: #eece1a;
       transition: all 0.5s ease-out; }
 
 .boxes {
@@ -232,7 +211,7 @@ main {
     transition: all 0.5s ease-out; }
     .boxes div:hover {
       padding: 0.5rem 1.5rem;
-      background: #cea425;
+      background: #eece1a;
       color: #000; }
       .boxes div:hover span {
         color: #000; }
@@ -243,7 +222,7 @@ main {
   border: 0;
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background: #cea425;
+    background: #eece1a;
     color: #000; }
 
 .btn-dark {
@@ -308,6 +287,6 @@ main {
       margin-top: 10vh; }
     main .lg-heading {
       margin-top: 1rem;
-      font-size: 4.5rem; }
+      font-size: 5rem; }
   .projects {
     grid-template-columns: 1fr; } }
