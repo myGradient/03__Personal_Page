@@ -1,0 +1,16 @@
+{
+  "name": "03__personal_page",
+  "version": "1.0.0",
+  "description": "My Personal Website",
+  "main": "index.js",
+  "homepage": "https://mygradient.github.io/03__Personal_Page/",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Ali Mengütay",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
