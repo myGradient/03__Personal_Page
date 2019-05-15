@@ -3,8 +3,8 @@
 /* I save all the variables and  mixins here to be well organized and more clear. To be able to use all variables I'll import this file from "main.scss". It's like liking files */
 
 
-$primary-color: #444;
-$secondary-color: #eece1a;
+$primary-color: #444;  // option: #444;
+$secondary-color:  #eece1a; //as option  #eece1a;
 $show-home-image: true;
 $home-image: url(../img/Background03.jpg);
 $background-opacity: 0.9;
