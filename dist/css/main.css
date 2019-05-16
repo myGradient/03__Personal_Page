@@ -308,9 +308,10 @@ main {
       margin-top: 10vh; }
     main .lg-heading {
       margin-top: 1rem;
-      margin-bottom: 2rem;
-      font-size: 4.2rem; }
+      margin-bottom: 8vh;
+      font-size: 18vw;
+      /* 4.2rem; */ }
     main .icons {
-      margin-top: 12rem; }
+      margin-top: 20vh; }
   .projects {
     grid-template-columns: 1fr; } }
