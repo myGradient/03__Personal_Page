@@ -36,6 +36,12 @@ html {
 
 /*#endregion  */
 /* I save all the variables and  mixins here to be well organized and more clear. To be able to use all variables I'll import this file from "main.scss". It's like liking files */
+/* @mixin mediaSoSm {
+  //Here everything will apply when width 321px or less
+  @media screen and (max-width: 321px) {
+    @content;
+  }
+} */
 /*  Read to Undertstand ME!!!
 ==> Menu Button: It always shoulde be same position that we want to see it so I set it absolute and z-index:3 it means closer  position to viewer top layer of html
 
@@ -339,7 +345,7 @@ main {
 
 @media screen and (max-width: 500px) {
   main {
-    padding: 2rem; }
+    padding: 1rem; }
     main #home h1 {
       margin-top: 10vh; }
     main .lg-heading {
@@ -348,15 +354,6 @@ main {
       font-size: 18vw;
       /* 4.2rem; */ }
     main .icons {
-      margin-top: 10vh; }
-  .projects {
-    grid-template-columns: 1fr; } }
-
-@media screen and (max-width: 321px) {
-  main .lg-heading {
-    margin-top: 1rem;
-    margin-bottom: 8vh; }
-  main .icons {
-    margin-top: 10vh; }
+      margin-top: 21vh; }
   .projects {
     grid-template-columns: 1fr; } }

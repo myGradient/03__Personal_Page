@@ -45,12 +45,12 @@ $background-opacity: 0.9; // Please put here 0.9
 
 // Media Query Mixins: by using "@content" I'll be able to call this function from any other file. For instance; "@iclude mediaMd" the use defined property.
 
-@mixin mediaSoSm {
-  //Here everything will apply when width 500px or less
+/* @mixin mediaSoSm {
+  //Here everything will apply when width 321px or less
   @media screen and (max-width: 321px) {
     @content;
   }
-}
+} */
 @mixin mediaSm {
   //Here everything will apply when width 500px or less
   @media screen and (max-width: 500px) {

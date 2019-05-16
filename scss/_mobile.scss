@@ -72,7 +72,7 @@
 // Smartphones
 @include mediaSm {
   main {
-    padding: 2rem;
+    padding: 1rem;
     #home h1 {
       margin-top: 10vh;
      
@@ -85,7 +85,7 @@
       
     }
     .icons {
-      margin-top: 10vh; //it's 25% of view heigth from top
+      margin-top: 21vh; //it's 25% of view heigth from top
     }
   
   }
@@ -97,22 +97,25 @@
 
 
 // ???? Work on here please So Small Smartphones
-@include mediaSoSm {
-  main {
+
+// @include mediaSoSm {
+//   main {
     
-    .lg-heading {
-      margin-top:1rem;
-      margin-bottom: 8vh;
-      // font-size: 4rem /* 18vw;,4.2rem; */
+//     .lg-heading {
+//       margin-top:1rem;
+//       margin-bottom: 8vh;
+//       // font-size: 4rem /* 18vw;,4.2rem; */
       
-    }
-    .icons {
-      margin-top: 10vh; //it's 25% of view heigth from top
-    }
+//     }
+//     .icons {
+//       margin-top: 10vh; //it's 25% of view heigth from top
+//     }
   
-  }
-    // Here for very small screen 1 fractional don't need to use repeat. 
-  .projects {
-    grid-template-columns: 1fr;
-  }
-}
+//   }
+//     // Here for very small screen 1 fractional don't need to use repeat. 
+//   .projects {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+
